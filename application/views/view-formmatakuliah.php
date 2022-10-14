@@ -24,7 +24,7 @@ method="post">
  <th>:</th>
  <td>
  <input type="text" name="kode" id="kode">
- </td>
+ </?=form_eror('kode',small class="text danger pl-3">', '</small>'; ?>
  </tr>
  <tr>
  <th>Nama MTK</th>
