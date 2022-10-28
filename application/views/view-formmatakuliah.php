@@ -1,4 +1,4 @@
-<html>
+    <html>
 
 <head>
     <title>form input matakuliah</title>
@@ -6,7 +6,7 @@
 
 <body>
     <center>
-        <form>    action"<?=    base_url('matakuliah/cetak');    ?>"
+        <form> action"<?= base_url('mahasiswa/cetak');    ?>"
 method="post">
             <table>
                 <tr>
