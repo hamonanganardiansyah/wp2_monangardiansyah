@@ -1,92 +1,92 @@
 <html>
 
 <head>
-    <tittle>D-lemas</tittle>
+    <title>Form Input Matakuliah</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/mahasiswa.css') ?>">
 </head>
 
 <body>
-    <center>
+    <div class="container">
+        <h1>Digital Learning Management System </h1>
+        <h1>(Di-Lemas)</h1>
+
+
         <form action="<?= base_url('mahasiswa/cetak'); ?>" method="post">
             <table>
                 <tr>
-                    <th colspan="3">
-                    Digital Learning Management System(Di-LeMas) 
-                    </th>
+                    <td colspan="3">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama Mahasiswa</td>
+                    <td>:</td>
+                    <td><input type="text" name="nama" id="nama"></td>
+
+                </tr>
+                <tr>
+                    <td>NIS</td>
+                    <td>:</td>
+                    <td><input type="text" name="nis" id="nis"></td>
+                </tr>
+                <tr>
+                    <td>Kelas</td>
+                    <td>:</td>
+                    <td><input type="text" name="kelas" id="kelas"></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>:</td>
+                    <td><input type="date" name="tgl" id="tgl"></td>
+                </tr>
+                <tr>
+                    <td>Tempat Lahir</td>
+                    <td>:</td>
+                    <td><input type="text" name="tmpt" id="tmpt"></td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td>:</td>
+                    <td><input type="text" name="alamat" id="alamat"></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" name="jk" id="laki" value="laki-laki"> Laki-laki
+                        <input type="radio" name="jk" id="perempuan" value="perempuan"> Perempuan
+                    </td>
+                </tr>
+                <tr>
+                    <td>Agama</td>
+                    <td>:</td>
+                    <td>
+                        <select name="agama" id="agama">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Budha">Budha</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Protestan">Protestan</option>
+                            <option value="Khonghucu">Khonghucu</option>
+                            <option value="" selected>Pilih</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <hr>
                     </td>
                 </tr>
-                    <th>Nama Mahasiswa</th>
-                    <th>:</th>
-                    <td>
-                        <input type="text" name="nama" id="nama">
-                    </td>
-                </tr>
                 <tr>
-                    <th>NIS</th>
-                    <td>:</td>
-                    <td>
-                        <input type="text" name="nis" id="nis">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Kelas</th>
-                    <td>:</td>
-                    <td>
-                        <input type="text" name="kelas" id="kelas">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Tanggal lahir</th>
-                    <td>:</td>
-                    <td>
-                        <input type="date" name="tgl" id="tgl">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Tempat lahir</th>
-                    <td>:</td>
-                    <td>
-                        <input type="text" name="tempat" id="tempat">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Alamat</th>
-                    <td>:</td>
-                    <td>
-                        <input type="text" name="alamat" id="alamat">
-                    </td>
-                </tr>
-                <tr>
-                    <th>Jenis Kelamin</th>
-                    <td>:</td>
-                   <td><input type="radio" name="jenis_kelamin" value="Laki-Laki"> Laki-Laki<br>
-                    <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan<br></td>
-                </tr> 
-                <tr>
-                    <th>agama</th>
-                    <td>:</td>
-                    <td>
-                        <select name="agama" id="agama">
-                            <option value="">pilih</option>
-                            <option value="2">islam</option>
-                            <option value="3">kristen</option>
-                            <option value="4">katolik</option>
-                            <option value="5">budha</option>
-                            <option value="6">hindu</option>
-                            <option value="7">protestan</option>
-                            <option value="8">khonghucu</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <td colspan="3" align="center">
-                        <input type="submit" value="Submit">
-                    </td>
+                    <td><button type="reset">Kosongkan</button></td>
+                    <td></td>
+                    <td align="right"><button type="submit">Kirim</button></td>
                 </tr>
             </table>
-</form>
-    </center>
+        </form>
+    </div>
+
 </body>
+
 </html>

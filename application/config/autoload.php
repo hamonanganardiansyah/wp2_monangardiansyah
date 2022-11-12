@@ -58,12 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-<<<<<<< HEAD
-$autoload['libraries'] = array('form_validation', 'session',
-'database');
-=======
 $autoload['libraries'] = array('form_validation', 'session', 'database');
->>>>>>> 05703a7 (pertemuan 10)
 
 /*
 | -------------------------------------------------------------------
@@ -137,8 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-<<<<<<< HEAD
-$autoload['model'] = array('modeluser'. 'modelbuku');
-=======
-$autoload['model'] = array('ModelUser', 'Modelbuku');
->>>>>>> 05703a7 (pertemuan 10)
+$autoload['model'] = array('ModelUser', 'ModelBuku');

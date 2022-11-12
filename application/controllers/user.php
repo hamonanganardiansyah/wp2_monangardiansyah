@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 class User extends CI_Controller
 {
     public function __construct()
@@ -20,7 +19,7 @@ class User extends CI_Controller
     public function anggota()
     {
         $data['judul'] = 'Data Anggota';
-        $data['user'] = $this->ModelUser->cekData(['email' => $this->model->userdata('email')])->row_array();
+        $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $this->db->where('role_id', 1);
         $data['anggota'] = $this->db->get('user')->result_array();
         $this->load->view('templates/header', $data);
@@ -33,14 +32,8 @@ class User extends CI_Controller
     {
         $data['judul'] = 'Ubah Profil';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $this->form_validation->set_rules(
-            'nama',
-            'Nama Lengkap',
-            'required|trim',
-            [
-                'required' => 'Nama tidak Boleh Kosong'
-            ]
-        );
+        $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim', ['required' => 'Nama tidak Boleh Kosong']);
+
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
@@ -49,8 +42,7 @@ class User extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $nama = $this->input->post('nama', true);
-            $email = $this->input->post('email', true);
-            //jika ada gambar yang akan diupload
+            $email = $this->input->post('email', true); //jika ada gambar yang akan diupload 
             $upload_image = $_FILES['image']['name'];
             if ($upload_image) {
                 $config['upload_path'] = './assets/img/profile/';
@@ -63,8 +55,7 @@ class User extends CI_Controller
                 if ($this->upload->do_upload('image')) {
                     $gambar_lama = $data['user']['image'];
                     if ($gambar_lama != 'default.jpg') {
-                        unlink(FCPATH . 'assets/img/profile/' .
-                            $gambar_lama);
+                        unlink(FCPATH . 'assets/img/profile/' . $gambar_lama);
                     }
                     $gambar_baru = $this->upload->data('file_name');
                     $this->db->set('image', $gambar_baru);
@@ -74,9 +65,8 @@ class User extends CI_Controller
             $this->db->set('nama', $nama);
             $this->db->where('email', $email);
             $this->db->update('user');
-            $this->session->set_flashdata('pesan', '<div 
-   class="alert alert-success alert-message" role="alert">Profil 
-   Berhasil diubah </div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Profil Berhasil diubah </div>');
+
             redirect('user');
         }
     }
